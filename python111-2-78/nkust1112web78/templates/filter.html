@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+何敏煌的網站
+{% endblock %}
+
+{% block haedmessage %}
+<h2> 所有超過10台可用自行車的站台列表</h2>
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col">
+      <table class="table table-striped">
+        <tr><td>站名</td><td>可用台數</td><td>總數</td></tr>
+          {% for item in data %}
+          <tr>
+            <td>{{ item.sna }}</td>
+            <td>{{ item.sbi }}</td>
+            <td>{{ item.tot }}</td>
+          </tr>
+          {% endfor %}
+      </table>
+    </div>
+    <div class="col-2">
+    </div>
+  </div>
+{% endblock %}
