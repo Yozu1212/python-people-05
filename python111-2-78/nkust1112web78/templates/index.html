@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %} 何敏煌的網站 {% endblock %}
+{% block title %} 柱的網站 {% endblock %}
 
 {% block headmessage %}
   <h2> 歡迎來到 {{ myname }} 的網站</h2>
@@ -8,4 +8,11 @@
 
 {% block content %} 
 這是首頁
+
+<!-- header.html -->
+{% load static %}
+<div class='well'>
+    <img src="{% static "images/logo.png" %}">
+</div>
+
 {% endblock %}
