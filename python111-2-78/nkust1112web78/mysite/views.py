@@ -47,6 +47,11 @@ def all_data(request):
 def filtered_data(request):
     return render(request, "filter.html", locals())
 
+    data = models.StockInfo.objects.filter(price__gte=300).order_by('-price')
+    numbers = len(data)
+    return render(request, "filter.html", locals())
+
+
 def chart(request):
     data = models.PhoneModel.objects.all()
     return render(request, "chart.html", locals())
