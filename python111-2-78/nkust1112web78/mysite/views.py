@@ -28,13 +28,15 @@ def all_data(request):
     peopledata = data['responseData']  
     msg = ""
     msg = "<h2>人口統計資料</h2><hr>"  
-    msg = msg + "<table><tr bgcolor=#aaaaaa><td>時間</td><td>村里名稱</td><td>戶數</td><td>總人口</td><td>總出生人數</td><td>死亡人數(男)</td><td>死亡人數(女)</td></tr>"
+    msg = msg + "<table><tr bgcolor=#aaaaaa><td>地區</td><td>村里名稱</td><td>戶數</td><td>總人口</td><td>男</td><td>女</td><td>總出生人數</td><td>死亡人數(男)</td><td>死亡人數(女)</td></tr>"
     for item in peopledata:
-        msg = msg + "<tr bgcolor=#33ff33><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr>".format(
-            item['\ufeffstatistic_yyymm'], 
+        msg = msg + "<tr bgcolor=#33ff33><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr>".format(
+            item['site_id'],
             item['village'], 
             item['household_no'],
             item['people_total'],
+            item['people_total_m'],
+            item['people_total_f'],
             item['birth_total'],
             item['death_m'],
             item['death_f']
