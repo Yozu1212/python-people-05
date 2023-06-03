@@ -1,29 +1,32 @@
-{% extends "base.html" %}
-
-{% block title %}
-柱的網站
-{% endblock %}
-
-{% block haedmessage %}
-<h2> 所有超過10台可用自行車的站台列表</h2>
-{% endblock %}
-
-{% block content %}
-  <div class="row">
-    <div class="col-2"></div>
-    <div class="col">
-      <table class="table table-striped">
-        <tr><td>站名</td><td>可用台數</td><td>總數</td></tr>
-          {% for item in data %}
-          <tr>
-            <td>{{ item.sna }}</td>
-            <td>{{ item.sbi }}</td>
-            <td>{{ item.tot }}</td>
-          </tr>
-          {% endfor %}
-      </table>
-    </div>
-    <div class="col-2">
-    </div>
-  </div>
-{% endblock %}
+<html>
+  <head>
+    <h1>縣市</h1> 
+  </head>
+  <body BGCOLOR="#FFC0CB">
+    <table CELLSPACING=y>
+      <tr><th>縣市</th></tr>
+      <tr><td><INPUT TYPE=submit VALUE=基隆市></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=台北市></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=新北市></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=桃園縣></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=新竹市></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=新竹縣></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=苗栗縣></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=台中市></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=彰化縣></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=南投縣></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=雲林縣></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=嘉義市></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=嘉義縣></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=台南市></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=高雄市><BASE HREF=/高雄.html></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=屏東縣></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=台東縣></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=花蓮縣></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=宜蘭縣></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=澎湖縣></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=金門縣></td></tr>
+      <tr><td><INPUT TYPE=submit VALUE=連江縣></td></tr>
+    </table>
+  </body>
+</html>
