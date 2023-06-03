@@ -12,15 +12,19 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='HBicycleData',
+            name='responseData',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('sna', models.CharField(max_length=100)),
-                ('sbi', models.IntegerField(default=0)),
-                ('tot', models.IntegerField(default=0)),
+                ('statistic_yyymm', models.CharField(max_length=100)),
+                ('svillage', models.IntegerField(default=0)),
+                ('household_no', models.IntegerField(default=0)),
+                ('people_total', models.IntegerField(default=0)),
+                ('birth_total', models.IntegerField(default=0)),
+                ('death_m', models.IntegerField(default=0)),
+                ('death_f', models.IntegerField(default=0)),
             ],
             options={
-                'ordering': ('-sbi',),
+                'ordering': ('svillage',),
             },
         ),
     ]

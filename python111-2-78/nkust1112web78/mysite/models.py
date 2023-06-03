@@ -1,13 +1,15 @@
 from django.db import models
 
-class HBicycleData(models.Model):
-    sna = models.CharField(max_length=100)
-    sbi = models.IntegerField(default=0)
-    tot = models.IntegerField(default=0)
-    class Meta:
-        ordering = ('-sbi',)
+class peopledata(models.Model):
+    statistic_yyymm = models.CharField(max_length=100)
+    svillage = models.IntegerField(default=0)
+    household_no = models.IntegerField(default=0)
+    people_total = models.IntegerField(default=0)
+    birth_total = models.IntegerField(default=0)
+    death_m = models.IntegerField(default=0)
+    death_f = models.IntegerField(default=0)
     def __str__(self):
-        return self.sna
+        return self.svillage
 
 class NKUSTnews(models.Model):
     title = models.CharField(max_length=200)

@@ -6,8 +6,7 @@ from mysite import models  # 從 mysite 的資料夾中的 models.py 匯入所�
 import random     # 匯入隨機模組
 
 def index(request):
-    mynames = ["高雄金城武", "楠梓大師兄", "高雄獨行俠", "高科邊緣人"]
-    myname = random.choice(mynames)
+    myname = "第五組"
     return render(request, "index.html", locals())
 
 def nkustnews(request):
@@ -23,16 +22,23 @@ def phonelist(request, id=-1):
     return render(request, "phonelist.html", locals())
 
 def all_data(request):
-    url = "https://opendata.hccg.gov.tw/OpenDataFileHit.ashx?ID=48DEDBDAC3A31FC6&u=77DFE16E459DFCE3F5CEA2F931E333F7E23D5729EF83D5F20744125E844FB27044F9892E6F09372518441B3BB84260426ADE242A57DFB9E8C9A50C50134F4F47"
-
+    url = "https://www.ris.gov.tw/rs-opendata/api/v1/datastore/ODRP012/10701"
     r = requests.get(url)         
-    data = json.loads(r.text)     
+    data = json.loads(r.text)   
+    peopledata = data['responseData']  
     msg = ""
-    msg = "<h2>新竹市自行車可用資訊" + data['updated_at'] + "</h2><hr>"   
-    bicycle_data = data['retVal'] 
-    msg = msg + "<table><tr bgcolor=#aaaaaa><td>站名</td><td>可用數量</td></tr>"
-    for item in bicycle_data:
-        msg = msg + "<tr bgcolor=#33ff33><td>{}</td><td>{}/{}</td></tr>".format(item['sna'].split("_")[1], item['sbi'], item['tot'])
+    msg = "<h2>人口統計資料</h2><hr>"  
+    msg = msg + "<table><tr bgcolor=#aaaaaa><td>時間</td><td>村里名稱</td><td>戶數</td><td>總人口</td><td>總出生人數</td><td>死亡人數(男)</td><td>死亡人數(女)</td></tr>"
+    for item in peopledata:
+        msg = msg + "<tr bgcolor=#33ff33><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr>".format(
+            item['\ufeffstatistic_yyymm'], 
+            item['village'], 
+            item['household_no'],
+            item['people_total'],
+            item['birth_total'],
+            item['death_m'],
+            item['death_f']
+            )
     msg = msg + "</table>"
     return HttpResponse(msg)
 
