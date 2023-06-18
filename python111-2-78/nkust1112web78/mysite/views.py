@@ -40,3 +40,27 @@ def born_data(request):
     data = models.StockInfo.objects.filter(price__gte=300).order_by('-price')
     numbers = len(data)
     return render(request, "born.html", locals())
+
+def tpchart_data(request):
+    
+    return render(request, "tpchart.html", locals())
+
+def ntchart_data(request):
+    
+    return render(request, "ntchart.html", locals())
+
+def tychart_data(request):
+    
+    return render(request, "tychart.html", locals())
+
+def tcchart_data(request):
+    
+    return render(request, "tcchart.html", locals())
+
+def tnchart_data(request):
+    
+    return render(request, "tnchart.html", locals())
+
+def kschart_data(request):
+    
+    return render(request, "kschart.html", locals())
