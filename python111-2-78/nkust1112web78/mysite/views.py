@@ -9,19 +9,8 @@ def index(request):
     myname = "第五組"
     return render(request, "index.html", locals())
 
-def nkustnews(request):
-    data = models.NKUSTnews.objects.all()
-    return render(request, "nkustnews.html", locals())
 
-def phonelist(request, id=-1):
-    if id == -1:
-        data = models.PhoneModel.objects.all()              #找出所有的手機
-    else:
-        maker = models.PhoneMaker.objects.get(id=id)        #找出一個(get)指定的廠牌
-        data = models.PhoneModel.objects.filter(maker=maker) #找出一堆(filter)符合的資料
-    return render(request, "phonelist.html", locals())
-
-def all_data(request):
+def areaperson_data(request):
     url = "https://www.ris.gov.tw/rs-opendata/api/v1/datastore/ODRP012/10701"
     r = requests.get(url)         
     data = json.loads(r.text)   
@@ -44,22 +33,8 @@ def all_data(request):
     msg = msg + "</table></ccenter>"
     return HttpResponse(msg)
 
-def filtered_data(request):
-    return render(request, "filter.html", locals())
-
-    data = models.StockInfo.objects.filter(price__gte=300).order_by('-price')
-    numbers = len(data)
-    return render(request, "filter.html", locals())
-
-
-def chart(request):
-    data = models.PhoneModel.objects.all()
-    return render(request, "chart.html", locals())
-
-def stock300list(request):
-    data = models.StockInfo.objects.filter(price__gte=300).order_by('-price')
-    numbers = len(data)
-    return render(request, "stocklist.html", locals())
+def citypeople_data(request):
+    return render(request, "citypeople.html", locals())
 
 def born_data(request):
     data = models.StockInfo.objects.filter(price__gte=300).order_by('-price')
