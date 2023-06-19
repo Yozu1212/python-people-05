@@ -1,46 +1,25 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block title %} 柱的網站 {% endblock %}
+
+{% block headmessage %}
+  <h2> 歡迎來到 {{ myname }} 的網站</h2>
+{% endblock %}
+
+{% block content %} 
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>人口趨勢圖-桃園</title>
-</head>
-<h2>桃園</h2>
-<body>
-    <script>
-        var ctxL = document.getElementById("lineChart").getContext('2d');
-        var myLineChart = new Chart(ctxL, {
-        type: 'line',
-        data: {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [{
-                label: "My First dataset",
-                data: [65, 59, 80, 81, 56, 55, 40],
-                backgroundColor: [
-                    'rgba(105, 0, 132, .2)',
-                ],
-                borderColor: [
-                    'rgba(200, 99, 132, .7)',
-                ],
-                borderWidth: 2
-            },
-            {
-                label: "My Second dataset",
-                data: [28, 48, 40, 19, 86, 27, 90],
-                backgroundColor: [
-                    'rgba(0, 137, 132, .2)',
-                ],
-                borderColor: [
-                    'rgba(0, 10, 130, .7)',
-                ],
-                borderWidth: 2
-            }
-            ]
-        },
-        options: {
-            responsive: true
-        }
-    });
-    </script>
-</body>
+  <title>
+    柱的網站
+  </title>
+  <head>
+  </head>
+  <body>
+    
+  </body>
+  <div class='well'>
+    <img src="static/images/bb.jpg"alt="logo" width="1280" height="720">
+
+  </div>
 </html>
+
+{% endblock %}
