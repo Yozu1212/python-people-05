@@ -37,8 +37,6 @@ def citypeople_data(request):
     return render(request, "citypeople.html", locals())
 
 def born_data(request):
-    data = models.StockInfo.objects.filter(price__gte=300).order_by('-price')
-    numbers = len(data)
     return render(request, "born.html", locals())
 
 def tpchart_data(request):
