@@ -42,25 +42,31 @@ def born_data(request):
     return render(request, "born.html", locals())
 
 def tpchart_data(request):
-    
+    myname = "第五組"
     return render(request, "tpchart.html", locals())
 
 def ntchart_data(request):
-    
+    myname = "第五組"
     return render(request, "ntchart.html", locals())
 
 def tychart_data(request):
-    
+    myname = "第五組"
     return render(request, "tychart.html", locals())
 
 def tcchart_data(request):
-    
+    myname = "第五組"
     return render(request, "tcchart.html", locals())
 
 def tnchart_data(request):
-    
+    myname = "第五組"
     return render(request, "tnchart.html", locals())
 
-def kschart_data(request):
     
+
+def kschart_data(request):
+    myname = "第五組"
     return render(request, "kschart.html", locals())
+
+def allin_data(request):
+    myname = "第五組"
+    return render(request, "header.html", locals())

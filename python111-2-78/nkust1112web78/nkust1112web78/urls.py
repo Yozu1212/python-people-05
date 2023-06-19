@@ -13,6 +13,7 @@ urlpatterns = [
     path("tychart/", views.tychart_data),
     path("tcchart/", views.tcchart_data),
     path("tnchart/", views.tnchart_data),
-    path("kschart/", views.kschart_data),
+    path("kschart/", views.kschart_data),#高雄
+    path("ALLIN/", views.allin_data),#高雄
 ]
 
